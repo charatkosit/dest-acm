@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MitsuModule } from './mitsu/mitsu.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { VisitorsModule } from './visitors/visitors.module';
 import { Visitor } from './visitors/entities/visitor.entity';
@@ -24,11 +23,9 @@ import { ConfigModule } from '@nestjs/config';
       entities: [Visitor,Officer],
       synchronize: true,
     }),
-    MitsuModule,
     VisitorsModule,
     OfficersModule,
-    AcmModule,
-    OfficersModule],
+    AcmModule],
   controllers: [AppController],
   providers: [
   
